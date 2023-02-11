@@ -15,7 +15,7 @@ public class Lanzadera extends Naves implements tripulacion {
 
     @Override
     public void tipo() {
-        this.setCategoria(this.getCategoria()+"categoria es: Lanzadera");
+        this.setCategoria("Lanzadera");
     }
 
     @Override
