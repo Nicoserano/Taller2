@@ -9,17 +9,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        // Crea una lista para almacenar objetos de la clase Naves
         List<Naves> naves = new ArrayList<Naves>();
 
         // Se crean tres naves y se añaden a la lista de naves
+        // Crea un objeto de la clase Lanzadera y lo añade a la lista de naves
         Lanzadera lanzadera = new Lanzadera();
         lanzadera.setNombre("Saturno V");
         lanzadera.setCapacidadCarga(3500);
         lanzadera.tipo();
         lanzadera.setVelocidad(0);
-        lanzadera.tripular(3);
+
         naves.add(lanzadera);
 
+        // Crea un objeto de la clase NoTripulada y lo añade a la lista de naves
         NoTripulada notripulada = new NoTripulada();
         notripulada.setNombre("Pionero X");
         notripulada.setCapacidadCarga(0);
@@ -27,14 +30,16 @@ public class Main {
         notripulada.setVelocidad(0);
         naves.add(notripulada);
 
+        // Crea un objeto de la clase Tripulada y lo añade a la lista de naves
         Tripulada tripulada = new Tripulada();
         tripulada.setNombre("Apolo");
         tripulada.setCapacidadCarga(800);
         tripulada.tipo();
         tripulada.setVelocidad(0);
-        tripulada.tripular(2);
+
         naves.add(tripulada);
 
+        // Crea un objeto de la clase Scanner para recibir entrada del usuario
         Scanner pregunta = new Scanner(System.in);
         int opcion = 0;
 
@@ -58,11 +63,12 @@ public class Main {
                         System.out.println("Velocidad: " + nave.getVelocidad()+"Km/h");
                         nave.aterrizar();
                         System.out.println("Velocidad: " + nave.getVelocidad() +"Km/h");
-                        System.out.println("----------------");
+                        System.out.println("-----------------------------------------");
                     }
                     break;
                 }
                 case 2: {
+                    // Muestra las opciones para crear una nave
                     System.out.println("1.Lanzadera");
                     System.out.println("2.No Tripulada");
                     System.out.println("3.Tripulada");
@@ -82,13 +88,14 @@ public class Main {
                         nueva = new Tripulada();
 
                     }
-
+                    // Si la nueva nave no es nula, le pide al usuario que ingrese su nombre y capacidad de carga
                     if (nueva != null) {
                         Scanner scan = new Scanner(System.in);
                         System.out.println("Ingrese el nombre de la nave:");
                         String nombre = scan.nextLine();
                         System.out.println("Ingrese la capacidad de carga de la nave:");
                         int capacidadCarga = scan.nextInt();
+                        // Establece el nombre y capacidad de carga de la nave y la añade a la lista de naves
                         nueva.setNombre(nombre);
                         nueva.setCapacidadCarga(capacidadCarga);
                         nueva.tipo();
@@ -100,32 +107,25 @@ public class Main {
                     break;
                 }
                 case 3: {
+                    // Muestra un mensaje de despedida
                     System.out.println("Adiós");
                     break;
                 }
                 default: {
+                    // Muestra un mensaje de opción inválida si el usuario ingresa una opción que no está disponible
                     System.out.println("Opción inválida, por favor escriba una opción válida");
                     break;
                 }
 
             }
+            // Muestra las opciones disponibles
             System.out.println("1.Inventario");
             System.out.println("2.Crear Nave");
             System.out.println("3.Salir");
             System.out.println("Escoja una opcion: ");
             opcion = pregunta.nextInt();
         }
+        // Cierra el scanner
         pregunta.close();
     }
-
-
-
-
-
-
-
-
-
-
-
 }
