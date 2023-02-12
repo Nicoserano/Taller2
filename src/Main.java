@@ -42,15 +42,15 @@ public class Main {
         // Crea un objeto de la clase Scanner para recibir entrada del usuario
         Scanner pregunta = new Scanner(System.in);
         int opcion = 0;
-
+        System.out.println("1.Inventario");
+        System.out.println("2.Crear Nave");
+        System.out.println("3.Salir");
+        System.out.println("Escoja una opción: ");
+        opcion = pregunta.nextInt();
         // Bucle que se ejecuta hasta que el usuario eliga la opción 3 (Salir)
         while (opcion != 3){
-            System.out.println("1.Inventario");
-            System.out.println("2.Crear Nave");
-            System.out.println("3.Salir");
 
-            System.out.println("Escoja una opción: ");
-            opcion = pregunta.nextInt();
+
             switch (opcion){
                 case 1:{
                     // Imprime la información de cada nave en el inventario
